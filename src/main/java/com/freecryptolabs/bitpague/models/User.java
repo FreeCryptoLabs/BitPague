@@ -1,6 +1,8 @@
 package com.freecryptolabs.bitpague.models;
 
 import jakarta.persistence.*;
+
+import java.util.Date;
 import java.util.UUID;
 
 @Entity(name = "USERS")
@@ -32,6 +34,13 @@ public class User {
 
     @Column(name = "password",nullable = false)
     private String password;
+
+    @Column(name = "created_at",nullable = false,updatable = false)
+    private Date created_at;
+
+    public Date getCreated_at() {
+        return created_at;
+    }
 
     public Integer getId() {
         return id;

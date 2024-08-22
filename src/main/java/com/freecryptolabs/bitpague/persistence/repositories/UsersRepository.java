@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface UsersRepository extends JpaRepository<User,Integer> {
 
-    @Query(value = "select u.id,u.email,u.external_id,u.gender,u.name,u.nickname,u.password,u.phone from USERS u where u.id =:id", nativeQuery = true)
+    @Query(value = "select u.id,u.email,u.external_id,u.gender,u.name,u.nickname,u.password,u.phone,u.created_at from USERS u where u.id =:id", nativeQuery = true)
     @Override @Nonnull
     public Optional<User> findById(@Nonnull @Param("id") Integer Id);
 
