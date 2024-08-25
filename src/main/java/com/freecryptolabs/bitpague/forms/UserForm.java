@@ -1,5 +1,6 @@
 package com.freecryptolabs.bitpague.forms;
 
+import com.freecryptolabs.bitpague.models.User;
 import jakarta.validation.constraints.*;
 
 public class UserForm {
@@ -23,4 +24,38 @@ public class UserForm {
     @Size(min = 8,max = 20)
     private String password;
 
+    public User toUser() {
+        User user = new User();
+        user.setEmail(getEmail());
+        user.setName(getName());
+        user.setPhone(getPhone());
+        user.setGender(getGender());
+        user.setNickname(getNickname());
+        user.setPassword(getPassword());
+        return user;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

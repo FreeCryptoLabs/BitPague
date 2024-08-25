@@ -21,6 +21,8 @@ public class UserDto {
 
     private Date created_at;
 
+    public UserDto(){}
+
     public UserDto(User user){
         this.external_id = user.getExternal_id();
         this.name = user.getName();
@@ -28,6 +30,7 @@ public class UserDto {
         this.email = user.getEmail();
         this.phone = user.getPhone();
         this.gender = user.getGender();
+        this.created_at = user.getCreated_at();
     }
 
     public UserDto(UUID external_id, String name, String nickname, String email, String phone, String gender, Date created_at) {
