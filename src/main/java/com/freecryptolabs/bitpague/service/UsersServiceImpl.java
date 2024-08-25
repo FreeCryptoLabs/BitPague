@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -16,8 +17,8 @@ public class UsersServiceImpl implements UsersService{
     UsersRepository usersRepository;
 
     @Override
-    public Optional<User> getById(Integer id) {
-        return usersRepository.findById(id);
+    public Optional<User> getByExternalId(UUID external_id) {
+        return usersRepository.findByExternal_id(external_id);
     }
 
     @Override
